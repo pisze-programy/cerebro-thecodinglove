@@ -6,8 +6,6 @@ const fetchData = (searchTerm) => {
   const API_KEY = 'dc6zaTOxFJmzC';
   const url = `http://api.giphy.com/v1/gifs/search?q=${searchTerm}&api_key=${API_KEY}`;
 
-  console.log(searchTerm, url);
-
   return fetch(url)
     .then(resp => resp.json())
     .then(resp => resp.data);
@@ -19,18 +17,19 @@ const Plugin = ({ term, display, actions }) => {
   if (match) {
 
     fetchData(match[1]).then(images => {
-      display({
-        id: 1,
+      const response = images.map((image, index) => ({
+        id: index,
         icon,
-        title: `Search for ${term}`,
-        getPreview: () => {
-          return <Preview images={images} actions={actions} />
-        }
-      });
+        title: `Search thecodinglove for ${match[1]}`,
+        getPreview: () => <Preview key={index} image={image} actions={actions} />
+      }));
+
+      display(response);
     });
   }
 };
 
-export {
-  Plugin as fn
+module.exports = {
+  fn: Plugin,
+  keyword: 'thecodinglove'
 };

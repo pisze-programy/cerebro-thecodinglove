@@ -4,28 +4,24 @@ import './styles.scss';
 export default class Preview extends Component {
   constructor(props) {
     super(props);
-
-    console.log(this.props.images);
   }
 
   render() {
-    if (!this.props.images.length) {
+    if (!'images' in this.props.image) {
       return <div>loading...</div>
     }
 
-    console.log(this.props.images);
-
     return (
       <div className='preview'>
-        {this.props.images.map((image, index) => {
-          return <img key={index} src={image.images.downsized.url} alt={image.slug} />
-        })}
+        <p className="title">{this.props.image.images.downsized.url}</p>
+        <img src={this.props.image.images.downsized.url} />
+        <p className="legal">thecodinglove.com</p>
       </div>
     );
   }
 }
 
 Preview.propTypes = {
-  images: React.PropTypes.array.isRequired,
+  image: React.PropTypes.object.isRequired,
   actions: React.PropTypes.object.isRequired,
 };

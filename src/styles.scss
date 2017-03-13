@@ -1,0 +1,23 @@
+.preview {
+    width: 100%;
+    padding: 0.5rem;
+    background: #fff;
+
+    .title {
+        padding: 1rem 1.2rem;
+        text-align: center;
+        font-size: 1rem;
+    }
+
+    img {
+        position: relative;
+        width: 100%;
+    }
+
+    .legal {
+        display: block;
+        padding: 0.2rem;
+        text-align: right;
+        margin: 0;
+    }
+}
