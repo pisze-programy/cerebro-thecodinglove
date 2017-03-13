@@ -50,3 +50,6 @@ config/secrets.json
 logger.txt
 \*-debug.log
 public/*-debug.log
+
+# Application compiled files
+dist

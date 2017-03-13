@@ -1,16 +1,13 @@
 {
-  "name": "cerebro-plugin",
-  "version": "1.0.0",
+  "name": "cerebro-thecodinglove",
+  "version": "0.0.1",
   "description": "",
   "license": "MIT",
-  "repository": "KELiON/cerebro-plugin",
+  "repository": "krbz/cerebro-thecodinglove",
   "author": {
-    "name": "Alexandr Subbotin",
-    "email": "kelionweb@gmail.com",
-    "url": "asubbotin.ru"
-  },
-  "engines": {
-    "node": ">=4"
+    "name": "Krystian Blaszczyk",
+    "email": "dev@blaszczyk.tk",
+    "url": "blaszczyk.tk"
   },
   "scripts": {
     "build": "webpack && babili dist -d dist --compact --no-comments",
@@ -36,5 +33,11 @@
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
     "webpack": "2.1.0-beta.27"
+  },
+  "dependencies": {
+    "file-loader": "^0.10.1",
+    "json-loader": "^0.5.4",
+    "node-sass": "^4.5.0",
+    "sass-loader": "^6.0.3"
   }
 }
